@@ -59,17 +59,39 @@ $(document).ready(function () {
   
   //banner parallax
   
-  let mountain = document.getElementById("mountain");
-  
+
+  $(".dummy").mousemove(function(event) {
+    // get vertical mouse coordinate inside div
+    var mouseVertical = event.clientX;
+    
+    // adjust css to follow mouse position
+    $("#player").css({
+      "transform" : "rotate(-" + (mouseVertical * 0.) + "deg)",
+      "margin-top" : 0 - (mouseVertical * 0.02),
+      "margin-left" : 0 + (mouseVertical * 0.03)
+    });
+  });
+
+
+
+
+
+
+
+
+    
   
   window.addEventListener('scroll', function(){
     var value  = window.scrollY;
   
-    moon.style.top = +value * 0.4 + 'px';
+    moon.style.top = +value * 0.8 + 'px';
     moon.style.left = value * 0.1 + 'px';
     
+    ball.style.top = -value * 0.1 + 'px';
+    ball.style.left = +value * 0.1 + 'px';
   
-  
+    space1.style.top = -value * 0.1 + 'px';
+    space1.style.left = +value * 0.2 + 'px';
     
   });
   
