@@ -71,6 +71,7 @@
   }
   100%{
     transform: rotate(360deg);
+   
   }
   }
 
@@ -86,14 +87,13 @@
   background: #2f0755;
   background-size: cover;
   transition: ease-in-out 0.8s;
-  z-index: 99;
+  z-index: 999;
   box-shadow: 0 0 15px -1px black;
   opacity: 0;
 }
 
 .navbar.sticky {
   position: fixed;
-  z-index: 1;
   width: 100%;
   font-family: montserrat, sans-serif;
   padding: 1.5rem 0;
@@ -101,8 +101,7 @@
   background-size: cover;
   box-shadow: 0 0 10px 1px;
   opacity: 1;
-
-
+  z-index: 999;
 }
 
 .navbar .max-width {
@@ -341,10 +340,11 @@
   /* background:url(/pics/backgr.jpg); */
   display: flex;
   align-items: center;
+  
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background: #0a2a43;
+  background: rgba(8, 29, 46, 0.986);
 }
 .home.sticky{
   /* background: url(/pics/backgr1.jpg); */
@@ -352,7 +352,8 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background: #081d2e;
+  background: rgb(8, 29, 46);
+  
 
 }
 
@@ -373,7 +374,24 @@ section{
  
   
 }
+.st{
+width: 100%;
+height: 200px;
+position:absolute;
+top: 0;
+display: flex;
 
+box-sizing: border-box;
+}
+.st2{
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 90%;
+  text-align: end;
+}
+.st2 a{
+  color: white;
+}
 
 section #moon{
   position: absolute;
@@ -383,40 +401,137 @@ margin-top: 2em;
   object-fit: contain;
   justify-content: center;
  
+ 
 }
 
 #astro{
   
     width: 50%;
     animation:rotate 10s infinite ;
+    
 
 }
-.dummy{
-    background: #0a2a43;
+.dummy .max-width{
+    /* background: #0a2a43; */
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    gap: no-gap;
+    width: 100%;
+    height: 100vh;
+    padding: 1em;
+    background: rgb(8, 29, 46);
+    align-items: center;
+   position: relative;
 }
 
+.dummy .col1, .col2{
+  width: 100%;
+  box-sizing: border-box;
+}
+.col2 h2{
+  z-index: 999;
+}
+
+.col2{
+  position: relative;
+
+ 
+}
+.text-col2{
+  color: white;
+  font-size: 4em;
+  left: 0;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding:0 2em;
+  position: relative;
+  font-size: 5em;
+  margin-top: -4em;
+ 
+  animation: fadeInRight 1s;
+}
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+img{
+  max-width: 100%;
+}
+.dummy img{
+  width: 400px;
+ 
+}
+.space{
+  position: absolute;
+  margin-top: -8em;
+  margin-left: 1em;
+}
+
+#ball {
+  width: 150px;
+  position:absolute;
+  z-index: 1;
+  margin-left: 10em;
+ 
+}
+
+.my-span a{
+  text-decoration: none;
+  color: aliceblue;
+  font-size: 2em;
+  text-transform: uppercase;
+}
+.my-span{
+background: rgb(8, 29, 46);
+padding: 1em;
+position: absolute;
+}
+
+#player{
+  width: 500px;
+  position:absolute;
+z-index: 1;
+ 
+}
+
+.img-col3{
+  position:absolute;
+  width: 60%;
+  bottom: 0;
+  right: 0;
+  
+}
 
 @keyframes rotate{
     0%{
         transform: rotate(0deg);
     }
-    40%{
-        transform: rotate(90deg);
+    25%{
+        transform: rotate(60deg);
     }
 
-    70%{
-        transform: rotate(160deg);
+    50%{
+        transform: rotate(90deg);
+    }
+    75%{
+        transform: rotate(180deg);
     }
     100%{
-        transform: rotate(360deg);
-    }
+      transform: rotate(360deg);
+  }
     
 }
 
 
 #moon{
   margin-bottom: 15em;
-  animation: floating 6s infinite;
+  animation: floating 8s infinite;
 
 }
 
@@ -448,6 +563,7 @@ footer{
   background-color: #000000;
   height: 90px;
   color: beige;
+  z-index: 99;
 }
 
 /* responsive Media Query */
@@ -508,20 +624,52 @@ footer{
 }
 
 @media (max-width: 690px) {
- 
+  .dummy .max-width{
+    flex-direction: column;
+    box-sizing: border-box;
+    justify-content: center;
+    
+   
   }
+  .dummy .col2{
+    width: 100%;
+  }
+  .dummy .col1{
+    width: 100%;
+  }
+  #ball {
+    width: 20%;
+  padding-top: 1em;
+ 
+    
+  }
+  .text-col2{
+    font-size: 2.5em;
+  }
+  #player{
+    width: 50%;
+    margin-top: 10em;
+  }
+  
   .home .home-content .text-1{
     font-size: 52px;
     text-align: center;
   }
   .home{
  
-    background-color: #0a2a43;
+
     padding-top: 5.6em;
   
   }
+  .col2{
+    box-sizing: border-box;
+ 
+    display: inline;
+    position: relative;
+    padding-bottom: 20em;
+  }
   
-
+}
 
 @media (max-width: 500px) {
     .home{
@@ -533,6 +681,9 @@ footer{
         font-size: 42px;
         margin-top: 1em;
         text-align: center;
+      }
+      .dummy{
+        flex-direction: column-reverse;
       }
 }
 
